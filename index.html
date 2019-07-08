@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8" name = "viewport" content = "width-device=width, initial-scale=1"/>
+		<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.css" />
+		<script src = "js/angular.js"></script>
+		<script src = "js/script.js"></script>
+	</head>
+<body ng-app = "simModule">
+	<nav class = "navbar navbar-default">
+		<div class = "container-fluid">
+			<a class = "navbar-brand" href =  "https://www.sourcecodester.com">Sourcecodester</a>
+		</div>
+	</nav>
+	<div class = "row">
+		<div class = "col-md-3"></div>
+		<div class = "col-md-6 well" ng-controller = "simController">
+			<h3 class = "text-primary">Simple Like and Dislike Using AngularJS</h3>
+			<hr style = "border-top:1px dotted #000;"/>
+			<br /><br />
+			<table class = "table table-bordered">
+				<thead>
+					<tr>
+						<th>Programming Language</th>
+						<th>Like</th>
+						<th>Dislike</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="pLang in pLangs">
+						<td>{{pLang.name}}</td>
+						<td>{{pLang.Likes}}</td>
+						<td>{{pLang.Dislikes}}</td>
+						<td><center><button class = "btn btn-primary" ng-click =  "incrementUp(pLang)"><span class = "glyphicon glyphicon-thumbs-up"></span></button> | <button class = "btn btn-danger" ng-click = "decrementDown(pLang)"><span class = "glyphicon glyphicon-thumbs-down"></span></button></center></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>		
+</html>
